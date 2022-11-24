@@ -4,6 +4,7 @@ import useImage from '../hooks/useImage'
 const GlobalStyle = createGlobalStyle`
     html {
         font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        font-size: 13px;
         background-image: url(${() => {
             const bg = useImage('monterey.jpeg')
             return bg
@@ -14,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     }
     ul, li {
         list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    p {
         padding: 0;
         margin: 0;
     }

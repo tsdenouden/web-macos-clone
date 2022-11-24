@@ -6,10 +6,10 @@ const Dock = () => {
         <DockWrapper>
             <AppDock>
                 <ul style={{ display: 'flex' }}>
-                    <Icon img="finder.png" alt="macos finder app icon"/>
-                    <Icon img="iterm2.png" alt="macos iterm2 app icon"/>
-                    <Icon img="chrome.png" alt="google chrome app icon"/>
-                    <Icon img="github.png" alt="github desktop app icon"/>
+                    <Icon img="finder.png" alt="macos finder app icon" />
+                    <Icon img="iterm2.png" alt="macos iterm2 app icon" />
+                    <Icon img="chrome.png" alt="google chrome app icon" />
+                    <Icon img="github.png" alt="github desktop app icon" />
                 </ul>
                 <div 
                     style={{ 
