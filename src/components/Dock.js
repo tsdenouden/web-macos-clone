@@ -1,15 +1,31 @@
 import styled from 'styled-components'
-import useImage from '../hooks/useImage'
+import AppIcon from './AppIcon'
 
-const Dock = () => {
+const Dock = ({openApp}) => {
     return (
         <DockWrapper>
             <AppDock>
                 <ul style={{ display: 'flex' }}>
-                    <Icon img="finder.png" alt="macos finder app icon" />
-                    <Icon img="iterm2.png" alt="macos iterm2 app icon" />
-                    <Icon img="chrome.png" alt="google chrome app icon" />
-                    <Icon img="github.png" alt="github desktop app icon" />
+                    <AppIcon 
+                        img="finder.png" 
+                        onClick={() => {openApp('finder')}}
+                        alt="macos finder app icon" 
+                    />
+                    <AppIcon 
+                        img="iterm2.png" 
+                        onClick={() => {openApp('terminal')}}
+                        alt="macos iterm2 app icon" 
+                    />
+                    <AppIcon 
+                        img="chrome.png" 
+                        onClick={() => {openApp('chrome')}}
+                        alt="google chrome app icon" 
+                    />
+                    <AppIcon 
+                        img="github.png" 
+                        link="https://github.com/tsdenouden/web-macos-clone"
+                        alt="github desktop app icon" 
+                    />
                 </ul>
                 <div 
                     style={{ 
@@ -17,19 +33,10 @@ const Dock = () => {
                         paddingLeft: '10px'
                     }}
                 >
-                    <Icon img="trashfull.png" alt="macos recycle bin icon" />
+                    <AppIcon img="trashfull.png" alt="macos recycle bin icon" />
                 </div>
             </AppDock>
         </DockWrapper>
-    )
-}
-
-const Icon = ({img, alt}) => {
-    const icon = useImage(img)
-    return (
-        <IconContainer>
-            <IconImg src={icon} alt={alt}/>
-        </IconContainer>
     )
 }
 
@@ -51,22 +58,6 @@ const AppDock = styled.div`
     backdrop-filter: blur(10px);
     padding: 5px 5px 3px 5px;
     width: 20%;
-`;
-
-const IconContainer = styled.li`
-    margin-inline: 10px;
-    width: 40px;
-    height: auto;
-    padding: 0;
-    margin: 0;
-`;
-
-const IconImg = styled.img`
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
 `;
 
 export default Dock
