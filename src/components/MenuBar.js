@@ -9,11 +9,11 @@ const MenuBar = () => {
     const time = FormatDateTime(curr_date)
 
     return (
-        <MenuContainer>
+        <Container>
             <Bar>
-                <MenuIcon>
-                    <MenuIconImg src={appleLogo} alt="apple logo" />
-                </MenuIcon>
+                <Icon>
+                    <IconImg src={appleLogo} alt="apple logo" />
+                </Icon>
                 <ul style={{ display: 'flex' }}>
                     <li>
                         <p>
@@ -22,11 +22,11 @@ const MenuBar = () => {
                     </li>
                 </ul>
             </Bar>
-        </MenuContainer>
+        </Container>
     )
 }
 
-const MenuContainer = styled.div`
+const Container = styled.div`
     position: fixed;
     top: 0;
     left: 0;
@@ -44,12 +44,12 @@ const Bar = styled.div`
     padding-left: 25px;
 `;
 
-const MenuIcon = styled.div`
+const Icon = styled.div`
     width: 12px;
     height: auto;
 `;
 
-const MenuIconImg = styled.img`
+const IconImg = styled.img`
     object-fit: contain;
     width: 100%;
     height: auto;

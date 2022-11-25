@@ -7,14 +7,9 @@ import AppLauncher from './components/AppLauncher/AppLauncher'
 
 const Desktop = () => {
     const [apps, setApps] = useState(['welcome'])
-
-    const openApp = (app) => {
-        setApps(apps.concat(app))
-    }
-
-    const closeApp = (capp) => {
-        setApps(apps.filter(app => app !== capp))
-    }
+    
+    const openApp = (app) => setApps(apps.concat(app))
+    const closeApp = (capp) => setApps(apps.filter(app => app !== capp))
 
     return (
         <div>

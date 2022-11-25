@@ -3,9 +3,9 @@ import AppIcon from './AppIcon'
 
 const Dock = ({openApp}) => {
     return (
-        <DockWrapper>
-            <AppDock>
-                <ul style={{ display: 'flex' }}>
+        <Wrapper>
+            <Apps>
+                <div style={{ display: 'flex' }}>
                     <AppIcon 
                         img="finder.png" 
                         onClick={() => {openApp('finder')}}
@@ -26,7 +26,7 @@ const Dock = ({openApp}) => {
                         link="https://github.com/tsdenouden/web-macos-clone"
                         alt="github desktop app icon" 
                     />
-                </ul>
+                </div>
                 <div 
                     style={{ 
                         borderLeft: '1px solid rgba(174, 174, 178, 0.3)',
@@ -35,12 +35,12 @@ const Dock = ({openApp}) => {
                 >
                     <AppIcon img="trashfull.png" alt="macos recycle bin icon" />
                 </div>
-            </AppDock>
-        </DockWrapper>
+            </Apps>
+        </Wrapper>
     )
 }
 
-const DockWrapper = styled.div`
+const Wrapper = styled.div`
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -49,7 +49,7 @@ const DockWrapper = styled.div`
     padding-bottom: 10px;
 `;
 
-const AppDock = styled.div`
+const Apps = styled.div`
     display: flex;
     justify-content: space-between;
     background-color: rgba(44, 44, 46, 0.3);

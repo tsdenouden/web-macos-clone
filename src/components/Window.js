@@ -15,7 +15,6 @@ const Window = (props) => {
         const menu = AppWindowMenu.current
         const Desktop = window.parentElement
 
-
         const onMouseDown = (e) => {
             isClicked.current = true
             // calculate distance from mouse to start of window menu
@@ -53,19 +52,13 @@ const Window = (props) => {
         <Container ref={AppWindow}>
             <Menu ref={AppWindowMenu}>
                 <MenuControl>
-                    <li>
-                        <CircularButton 
+                    <CircularButton 
                         color="rgb(255,69,58)" 
                         size="6px"
                         onClick={props.onClose}
-                        />
-                    </li>
-                    <li>
-                        <CircularButton color="rgb(255,159,10)" size="6px" />
-                    </li>
-                    <li>
-                        <CircularButton color="rgb(48,209,88)" size="6px" />
-                    </li>
+                    />
+                    <CircularButton color="rgb(255,159,10)" size="6px" />
+                    <CircularButton color="rgb(48,209,88)" size="6px" />
                 </MenuControl>
             </Menu>
             <Content>
