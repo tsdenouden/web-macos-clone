@@ -1,14 +1,16 @@
 const FormatDateTime = (new_date) => {
+    let day = new_date.toLocaleString('en-US', { weekday: 'long' })
+    day = day.slice(0,3)
+
     let local_time = new_date.toLocaleString(
         'en-US', 
         { 
-            weekday: 'long',
             hour: 'numeric', 
             minute: 'numeric', 
             hour12: true 
         }
     )
-    local_time = local_time.replace('day', '')
+    local_time = day + " " + local_time
     return local_time
 }
 
